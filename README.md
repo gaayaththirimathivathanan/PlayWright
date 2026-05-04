@@ -1,41 +1,47 @@
-# PixelsSuite Image Resizer Automation
+# PixelsSuite Test Automation
 
-This Playwright automation project is built to test the image preview functionality of the [PixelsSuite Image Resizer](https://www.pixelssuite.com/image-resizer) tool. It verifies that when an image is uploaded, a preview image successfully renders on the webpage.
+This repository contains Playwright test scripts for automating test scenarios for the [PixelsSuite](https://www.pixelssuite.com/) platform.
 
-## Prerequisites
+## 1. Image Resizer Automation
 
+This script tests the image preview functionality of the [PixelsSuite Image Resizer](https://www.pixelssuite.com/image-resizer) tool. It verifies that when an image is uploaded, a preview image successfully renders on the webpage.
+
+### Prerequisites
 - Python 3.8+ installed on your system.
 
-## Setup Instructions
-
-1. **Navigate to the project directory** where this file is located:
+### Setup Instructions
+1. **Navigate to the project directory**:
    ```bash
    cd path/to/your/folder
    ```
-
 2. **Install Required Python Dependencies:**
-   Install `playwright` (and optionally `openpyxl` if needed for your broader testing suite):
    ```bash
    pip install playwright openpyxl
    ```
-
 3. **Install Playwright Browsers:**
-   Playwright requires specific browser binaries to execute tasks. Install them by running:
    ```bash
-   playwright install
+   playwright install chromium
    ```
 
-## Running the Test
-
+### Running the Test
 To execute the automation script, simply run:
 ```bash
 python test_image_resizer.py
 ```
 
-### What the script does:
-1. Automatically creates a dummy `sample.png` file (if it isn't found).
-2. Opens a visible Chromium browser instance and navigates to the image resizer.
-3. Uploads the PNG file.
-4. Waits up to 15 seconds for an image preview to appear dynamically.
-5. Captures a screenshot to the `results/` folder (named `preview_pass.png` on success).
-6. Logs the execution summary directly into `execution_results.csv`.
+## 2. Image Format Conversion Automation (Convert to PNG)
+
+This script verifies the preview functionality of image format conversion on [pixelssuite.com/convert-to-png](https://www.pixelssuite.com/convert-to-png).
+
+### Running the Tests
+To run the automated script and generate the execution results:
+```bash
+python image_preview_test.py
+```
+To run the script in headless mode (no browser UI):
+```bash
+python image_preview_test.py --headless
+```
+
+### Results
+For both tests, execution summaries are logged directly into `execution_results.csv`, and any generated screenshots are saved in the `results/` folder.
